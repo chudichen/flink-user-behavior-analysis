@@ -1,4 +1,4 @@
-package com.chudichen.scala
+package com.chudichen.scala.dataset
 
 import org.apache.flink.api.common.accumulators.LongCounter
 import org.apache.flink.api.common.functions.RichMapFunction

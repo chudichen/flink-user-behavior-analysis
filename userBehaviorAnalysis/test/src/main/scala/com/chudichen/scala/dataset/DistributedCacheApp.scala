@@ -1,10 +1,9 @@
-package com.chudichen.scala
+package com.chudichen.scala.dataset
 
 import org.apache.commons.io.FileUtils
 import org.apache.flink.api.common.functions.RichMapFunction
 import org.apache.flink.api.scala.ExecutionEnvironment
 import org.apache.flink.configuration.Configuration
-
 
 /**
  * 分布式缓存
