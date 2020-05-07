@@ -20,6 +20,5 @@ object DataStreamTransformationApp {
     data.filter(_ % 2 == 0).print().setParallelism(1)
   }
 
-  def unionFunction()
 
 }
