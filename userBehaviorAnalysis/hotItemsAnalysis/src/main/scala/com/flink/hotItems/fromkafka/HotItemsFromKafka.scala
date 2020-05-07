@@ -40,7 +40,7 @@ object HotItemsFromKafka {
     properties.setProperty("auto.offset.reset", "latest")
 
 
-    val dataStream= env.addSource(new FlinkKafkaConsumer[String]("test",new SimpleStringSchema(),properties))
+    val dataStream= env.addSource(new FlinkKafkaConsumer[String]("test", new SimpleStringSchema(), properties))
       .map(data=>{
         val dataArray = data.split(",")
         UserBehavior(dataArray(0).trim.toLong,dataArray(1).trim.toLong,dataArray(2).trim.toInt,dataArray(3).trim,dataArray(4).trim.toLong)

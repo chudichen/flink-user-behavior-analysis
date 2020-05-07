@@ -19,12 +19,12 @@ object KafkaProducer {
     val producer =new KafkaProducer[String,String](properties)
 
     // 从文件中读取数据并发送
-    val bufferedSource = io.Source.fromFile("C:\\Users\\lenovo-aa\\Desktop\\flink\\flink-UserBehaviorAnalysis\\userBehaviorAnalysis\\hotItemsAnalysis\\src\\main\\resources\\UserBehavior.csv")
-    for(line<- bufferedSource.getLines()){
-      val record = new ProducerRecord[String,String](topic,line)
-      println("发送："+line)
-      producer.send(record)
-    }
+    val bufferedSource = io.Source.fromFile("/home/chu/IdeaProjects/flink-UserBehaviorAnalysis-master/userBehaviorAnalysis/hotItemsAnalysis/src/main/resources/UserBehavior.csv")
+//    for(line<- bufferedSource.getLines()){
+//      val record = new ProducerRecord[String,String](topic,line)
+//      println("发送："+line)
+//      producer.send(record)
+//    }
     producer.close()
   }
 
