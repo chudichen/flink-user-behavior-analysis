@@ -38,13 +38,9 @@ object PageView {
         .sum(1)
 
 
-
     dataStream.print("pv count")
 
     env.execute("page view job")
-
-
-
 
   }
 }

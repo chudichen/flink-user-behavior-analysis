@@ -5,7 +5,12 @@ import java.util.Properties
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
 
-
+/**
+ * Kafka生产者
+ *
+ * @author chudichen
+ * @since 2020-05-08
+ */
 object KafkaProducer {
 
   def writeToKafka(topic: String): Unit = {
@@ -20,11 +25,11 @@ object KafkaProducer {
 
     // 从文件中读取数据并发送
     val bufferedSource = io.Source.fromFile("/home/chu/IdeaProjects/flink-UserBehaviorAnalysis-master/userBehaviorAnalysis/hotItemsAnalysis/src/main/resources/UserBehavior.csv")
-//    for(line<- bufferedSource.getLines()){
-//      val record = new ProducerRecord[String,String](topic,line)
-//      println("发送："+line)
+    for(line<- bufferedSource.getLines()){
+      val record = new ProducerRecord[String,String](topic, line)
+      println("发送："+line)
 //      producer.send(record)
-//    }
+    }
     producer.close()
   }
 
